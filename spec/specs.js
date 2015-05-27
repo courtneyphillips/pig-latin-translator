@@ -4,6 +4,10 @@ describe('pig_latin', function() {
     expect(pig_latin('abacus')).to.equal("abacusay");
   });
 
+  it("moves the first consonant of a word beginning with a consonant to the end, adds ay", function() {
+    expect(pig_latin('luau')).to.equal("uaulay");
+  });
+
 });
 
 describe('is_vowel', function() {
@@ -15,5 +19,6 @@ describe('is_vowel', function() {
   it("detects if a letter is NOT a vowel", function() {
     expect(is_vowel('b')).to.equal(false);
   });
+
 
 });

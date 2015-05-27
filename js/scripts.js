@@ -1,7 +1,10 @@
 var pig_latin = function(phrase) {
   if(is_vowel(phrase.charAt(0))) {
-    phrase = phrase.concat("ay");
+  } else {
+    phrase = phrase.concat(phrase.charAt(0));
+    phrase = phrase.slice(1, phrase.length);
   }
+  phrase = phrase.concat("ay");
   return phrase;
 };
 
