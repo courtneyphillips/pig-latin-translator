@@ -22,8 +22,6 @@ var pigLatin = function(wholePhrase) {
   return wholePhrase;
 };
 
-
-
 var isVowel = function(letter) {
   if(letter.match(/[aeiou]/) != null) {
     return true;
@@ -38,3 +36,15 @@ var shiftPhrase = function(phrase) {
   phrase = phrase.slice(1, phrase.length);
   return phrase;
 };
+
+$(document).ready(function() {
+
+  $("#piglatin").submit(function(event) {
+    var input = ($("input#input-string").val());
+    var translatedInput = pigLatin(input);
+    $(".output").text(translatedInput);
+    $("#result").show();
+    event.preventDefault();
+  });
+
+});
