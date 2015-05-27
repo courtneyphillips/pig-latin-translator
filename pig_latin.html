@@ -7,18 +7,23 @@
        <script src="js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h1>Pig Latin</h1>
-      <form id="piglatin">
-        <div class="form-group">
-            <label for="input-string">Insert a Message:</label>
-            <input id="input-string" type="text">
-        </div>
-          <div id="result">
-              <p>Pig Latin Translation: <span class="output"></span> </p>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Pig Latin</h1>
+        <p class="lead">Pig Latin is a language game in which words in English are altered. The objective is to conceal the meaning of the words from others not familiar with the rules.<br></p>
+        <form id="piglatin">
+          <div class="form-group">
+              <label for="input-string"><b>Insert a Message:</b></label>
+              <input id="input-string" type="text">
           </div>
-        <button type="submit" class="btn">Submit</button>
+          <div id="result">
+            <div class="alert alert-info"><p><b>Pig Latin Translation:</b> <em><span class="output"></span></em> </p></div>
+          </div>
+          <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+        </div>
       </form>
     </div>
+    <div id="pigbanner">
+    <img class="center-block" src="http://www.clonesafety.org/imagelibrary/photos/master/pigs1.jpg"></div>
   </body>
 </html>

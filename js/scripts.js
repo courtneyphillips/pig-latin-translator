@@ -57,7 +57,8 @@ $(document).ready(function() {
     var input = ($("input#input-string").val());
     var translatedInput = pigLatin(input);
     $(".output").text(translatedInput);
-    $("#result").show();
+    $("#result").slideToggle("slow");
+    $(".panel").fadeIn("slow");
     event.preventDefault();
   });
 
