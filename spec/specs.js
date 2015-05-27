@@ -1,29 +1,35 @@
-describe('pig_latin', function() {
+describe('pigLatin', function() {
 
   it("adds 'ay' to the end of words that start with a vowel", function() {
-    expect(pig_latin('abacus')).to.equal("abacusay");
+    expect(pigLatin('abacus')).to.equal("abacusay");
   });
 
   it("moves the first consonant of a word beginning with a consonant to the end, adds ay", function() {
-    expect(pig_latin('luau')).to.equal("uaulay");
+    expect(pigLatin('luau')).to.equal("uaulay");
   });
 
   it("moves the first and any consecutive consonants after the first of a word beginning with a consonant to the end, adds ay", function() {
-    expect(pig_latin('glee')).to.equal("eeglay");
+    expect(pigLatin('glee')).to.equal("eeglay");
   });
 
+  it("moves both the q and u if a word begins with 'qu'", function(){
+    expect(pigLatin('quark')).to.equal("arkquay");
+  });
+
+  it("treats the y as a consonant if word begins with y", function() {
+    expect(pigLatin('yodelmania')).to.equal("odelmaniayay");
+  });
 
 });
 
-describe('is_vowel', function() {
+describe('isVowel', function() {
 
   it("detects if a letter is a vowel", function() {
-    expect(is_vowel('a')).to.equal(true);
+    expect(isVowel('a')).to.equal(true);
   });
 
   it("detects if a letter is NOT a vowel", function() {
-    expect(is_vowel('b')).to.equal(false);
+    expect(isVowel('b')).to.equal(false);
   });
-
 
 });
