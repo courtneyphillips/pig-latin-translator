@@ -1,16 +1,28 @@
-var pigLatin = function(phrase) {
-  if (phrase.charAt(0) === "y") {
-    phrase = shiftPhrase(phrase);
-  }
-  while(!isVowel(phrase.charAt(0))) {
-    if (phrase.charAt(0) === "q") {
+var pigLatin = function(wholePhrase) {
+
+  wholePhrase = wholePhrase.split(" ");
+
+  wholePhrase.forEach(function(phrase, index) {
+
+    if (phrase.charAt(0) === "y") {
       phrase = shiftPhrase(phrase);
     }
-    phrase = shiftPhrase(phrase);
-  }
-  phrase = phrase.concat("ay");
-  return phrase;
+    while(!isVowel(phrase.charAt(0))) {
+      if (phrase.charAt(0) === "q") {
+        phrase = shiftPhrase(phrase);
+      }
+      phrase = shiftPhrase(phrase);
+    }
+    phrase = phrase.concat("ay");
+    wholePhrase[index] = phrase;
+
+  });
+
+  wholePhrase = wholePhrase.join(" ");
+  return wholePhrase;
 };
+
+
 
 var isVowel = function(letter) {
   if(letter.match(/[aeiou]/) != null) {

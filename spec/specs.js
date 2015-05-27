@@ -20,6 +20,11 @@ describe('pigLatin', function() {
     expect(pigLatin('yodelmania')).to.equal("odelmaniayay");
   });
 
+  it("translates each word in a sentence into pig latin", function() {
+    expect(pigLatin('the quick brown fox')).to.equal("ethay ickquay ownbray oxfay");
+  });
+
+
 });
 
 describe('isVowel', function() {
