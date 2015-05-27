@@ -7,11 +7,14 @@ var pigLatin = function(wholePhrase) {
     if (phrase.charAt(0) === "y") {
       phrase = shiftPhrase(phrase);
     }
-    while(!isVowel(phrase.charAt(0))) {
-      if (phrase.charAt(0) === "q") {
+
+    if(hasVowel(phrase)) {
+      while(!isVowel(phrase.charAt(0))) {
+        if (phrase.charAt(0) === "q") {
+          phrase = shiftPhrase(phrase);
+        }
         phrase = shiftPhrase(phrase);
       }
-      phrase = shiftPhrase(phrase);
     }
     phrase = phrase.concat("ay");
     wholePhrase[index] = phrase;
@@ -29,6 +32,17 @@ var isVowel = function(letter) {
   else {
     return false;
   }
+};
+
+var hasVowel = function(word) {
+  var hadVowel = false
+  var splitWord = word.split("");
+  splitWord.forEach(function(letter) {
+    if(isVowel(letter)) {
+      hadVowel = true;
+    }
+  });
+  return hadVowel;
 };
 
 var shiftPhrase = function(phrase) {

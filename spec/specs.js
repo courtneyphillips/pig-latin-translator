@@ -38,3 +38,15 @@ describe('isVowel', function() {
   });
 
 });
+
+describe('hasVowel', function(){
+
+  it("detects if a vowel is NOT present in a word", function(){
+    expect(hasVowel('ghgdl')).to.equal(false);
+  });
+
+  it("detects if a vowel is present in a word", function(){
+    expect(hasVowel('megatron')).to.equal(true);
+  });
+
+});
