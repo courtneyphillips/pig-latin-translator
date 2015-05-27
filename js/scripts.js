@@ -1,6 +1,7 @@
 var pig_latin = function(phrase) {
   if(is_vowel(phrase.charAt(0))) {
-  } else {
+  }
+  while(!is_vowel(phrase.charAt(0))) {
     phrase = phrase.concat(phrase.charAt(0));
     phrase = phrase.slice(1, phrase.length);
   }

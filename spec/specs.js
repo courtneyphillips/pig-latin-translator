@@ -8,6 +8,11 @@ describe('pig_latin', function() {
     expect(pig_latin('luau')).to.equal("uaulay");
   });
 
+  it("moves the first and any consecutive consonants after the first of a word beginning with a consonant to the end, adds ay", function() {
+    expect(pig_latin('glee')).to.equal("eeglay");
+  });
+
+
 });
 
 describe('is_vowel', function() {
